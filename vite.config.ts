@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@': resolve(new URL('./src', import.meta.url).pathname),
     }
-  }
+  },
+  base: '/interview-test'
 })
 
