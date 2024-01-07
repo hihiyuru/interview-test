@@ -41,7 +41,7 @@ onMounted(() => {
 <template>
     <div class="overflow-hidden">
         <header class="w-full bg-white absolute top-0 left-0 p-1 flex flex-row-reverse">
-            <button class="px-3 py-1 border-2 border-slate-600 bg-slate-400" @click="toggleNav()">
+            <button class="px-3 py-1 border-2 border-gray-400 bg-gray-300" @click="toggleNav()">
                 <div class="w-3.5">
                     <span class="h-0.5 w-full my-1 bg-black block"></span>
                     <span class="h-0.5 w-full my-1 bg-black block"></span>
