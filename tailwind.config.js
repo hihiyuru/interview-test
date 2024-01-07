@@ -16,6 +16,8 @@ export default {
       indigo: colors.indigo,
       yellow: colors.yellow,
       'white': '#ffffff',
+      'purple': '#71515f',
+      'green': '#A5F12B'
     },
     extend: {},
   },

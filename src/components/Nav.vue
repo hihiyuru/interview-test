@@ -40,7 +40,7 @@ onMounted(() => {
 
 <template>
     <div class="overflow-hidden">
-        <header class="w-full bg-white absolute top-0 p-1 flex flex-row-reverse">
+        <header class="w-full bg-white absolute top-0 left-0 p-1 flex flex-row-reverse">
             <button class="px-3 py-1 border-2 border-slate-600 bg-slate-400" @click="toggleNav()">
                 <div class="w-3.5">
                     <span class="h-0.5 w-full my-1 bg-black block"></span>
@@ -53,11 +53,11 @@ onMounted(() => {
 
 
         <Transition enter-active-class="transition-all duration-300" leave-active-class="transition-all duration-300"
-            enter-from-class="transform translate-x-full" enter-to-class="transform translate-x-0"
-            leave-from-class="transform translate-x-0" leave-to-class="transform translate-x-full">
-            <div v-if="isShowNav" class="min-h-screen absolute top-0 right-0 flex w-full overflow-hidden">
+            enter-from-class="transform translate-x-full" enter-to-class="transform translate-x-0 z-30"
+            leave-from-class="transform translate-x-0 z-30" leave-to-class="transform translate-x-full z-30">
+            <div v-if="isShowNav" class="min-h-screen absolute top-0 right-0 flex w-full overflow-hidden z-30">
                 <div class="w-3/12" @click="toggleNav()"></div>
-                <nav class="bg-black w-9/12 p-5">
+                <nav class="bg-black w-9/12 p-5 relative z-30">
                     <ul class="min-w-full bg-gray-400 p-4">
                         <li v-for="item in menuData" :key="item.key" class="cursor-pointer mt-4">
                             <p :class="[item.key === selectParentKey ? 'text-yellow-300' : 'text-white']"

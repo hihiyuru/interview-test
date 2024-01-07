@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import Nav from '@/components/Nav.vue'
+import Animation from '@/components/Animation.vue'
 import { MenuItems, MenuMap } from '@/type/menu'
 import { menuData } from "@/data/menuData"
 let mappedObject = {} as MenuMap
@@ -53,7 +54,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-[390px] min-h-screen bg-yellow-600 m-auto relative">
+  <div class="w-[390px] min-h-screen bg-yellow-600 m-auto relative flex items-center justify-center">
     <Nav></Nav>
+    <Animation></Animation>
   </div>
 </template>
