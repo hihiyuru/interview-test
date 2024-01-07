@@ -54,7 +54,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-[390px] min-h-screen bg-gray-300 m-auto relative flex items-center justify-center">
+  <div class="w-[390px] min-h-screen bg-gray-300 m-auto relative flex items-center justify-center overflow-hidden">
     <Nav></Nav>
     <Animation></Animation>
   </div>
