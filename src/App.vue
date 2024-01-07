@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import Nav from '@/components/Nav.vue'
 import Animation from '@/components/Animation.vue'
 import { MenuItems, MenuMap } from '@/type/menu'
 import { menuData } from "@/data/menuData"
 let mappedObject = {} as MenuMap
+const isDone = ref<boolean>(false)
 
 /**
  * 將 MenuItems 陣列轉換為物件形式。
@@ -49,13 +50,15 @@ onMounted(() => {
   mappedObject = { ...arrayToObject(menuData) };
   // 把map存到localStorage
   localStorage.setItem('menu.map', JSON.stringify(mappedObject));
+  // 如果app完成工作就讓nav掛載
+  isDone.value = true
 });
 
 </script>
 
 <template>
   <div class="w-[390px] min-h-screen bg-gray-300 m-auto relative flex items-center justify-center overflow-hidden">
-    <Nav></Nav>
+    <Nav v-if="isDone"></Nav>
     <Animation></Animation>
   </div>
 </template>
