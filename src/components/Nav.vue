@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { onMounted, ref, reactive } from 'vue';
-import { MenuItem, MenuMap, MenuItems } from '@/type/menu'
-import { menuData } from "@/data/menuData"
+import { ref, reactive, onMounted } from 'vue';
+import { MenuItem, MenuMap, MenuItems } from '@/type/menu';
+import { menuData } from "@/data/menuData";
 import Menu from '@/components/Menu.vue';
 
 const isShowNav = ref<boolean>(false);
 let mappedObject = reactive<MenuMap>({})
 const selectParentKey = ref<string | MenuItem>('');
-// const existingUniqueIds = ref<string | null>(localStorage.getItem('unique.id.arr')); // 實作記憶功能
 
 // 開關側邊欄
 const toggleNav = () => {
@@ -17,6 +16,8 @@ const toggleNav = () => {
 // 選擇第一層的id
 const select = (parent: MenuItems) => {
     selectParentKey.value = parent?.key;
+    const uniqueId: string = JSON.stringify({ 'depth_1': parent?.key });
+    localStorage.setItem('unique.id.arr', uniqueId);
 };
 
 onMounted(() => {
@@ -63,8 +64,10 @@ onMounted(() => {
                                 @click.stop="select(item)">
                                 {{ item.text }}
                             </p>
-                            <Menu v-if="selectParentKey && item.key === selectParentKey" :currentParentKey="selectParentKey"
-                                :currentMenuMap="mappedObject" :uniqueId="selectParentKey" :selectDepth="1">
+                            <Menu
+                                v-if="selectParentKey && item.key === selectParentKey && Object.keys(mappedObject).length > 0"
+                                :currentParentKey="selectParentKey" :currentMenuMap="mappedObject"
+                                :uniqueId="selectParentKey" :selectDepth="1">
                             </Menu>
                         </li>
                     </ul>
