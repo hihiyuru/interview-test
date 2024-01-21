@@ -26,7 +26,7 @@ const arrayToObject = (MenuArr: MenuItems[]) => {
       // 提取MenuItems物件的屬性
       const { key, text, children } = item;
       const currentKey: string = key;
-      // 生成唯一的識別Id，基於父層的key加上當key
+      // 生成唯一的識別Id，基於父層的key加上當前key
       const uniqueId: string = parentKey ? `${parentKey}-${currentKey}` : currentKey;
 
       // 將項目添加到結果物件中，包含 key、text、uniqueId 和 depth 屬性
