@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/gsap": "^3.0.0",
+    "gsap": "^3.12.5",
     "vue": "^3.3.11"
   },
   "devDependencies": {

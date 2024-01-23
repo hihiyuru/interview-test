@@ -81,7 +81,7 @@ const trimObject = (obj: Record<string, any>, number: number): Record<string, an
     <span v-for="index in props.selectDepth" :key="index" class="w-4 h-full inline-block"></span>
     <li v-if="item?.text" :class="[item.key === selectParentKey ? 'text-yellow-300' : 'text-white', 'inline-block']"
       @click="select(item)">
-      {{ item.text }} / {{ item.key }}
+      {{ item.text }}
     </li>
     <Menu v-if="selectParentKey && item?.key === selectParentKey" :currentParentKey="selectParentKey"
       :currentMenuMap="currentMappedObject" :selectDepth="currentDepth">

@@ -1,8 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/gsap': ^3.0.0
   '@vitejs/plugin-vue': ^4.5.2
   autoprefixer: ^10.4.16
+  gsap: ^3.12.5
   postcss: ^8.4.32
   tailwindcss: ^3.4.0
   typescript: ^5.2.2
@@ -11,6 +13,8 @@ specifiers:
   vue-tsc: ^1.8.25
 
 dependencies:
+  '@types/gsap': 3.0.0
+  gsap: 3.12.5
   vue: 3.4.3_typescript@5.3.3
 
 devDependencies:
@@ -413,6 +417,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@types/gsap/3.0.0:
+    resolution: {integrity: sha512-BbWLi4WRHGze4C8NV7U7yRevuBFiPkPZZyGa0rryanvh/9HPUFXTNBXsGQxJZJq7Ix7j4RXMYodP3s+OsqCErg==}
+    deprecated: This is a stub types definition. gsap provides its own type definitions, so you do not need this installed.
+    dependencies:
+      gsap: 3.12.5
+    dev: false
 
   /@vitejs/plugin-vue/4.6.2_vite@5.0.10+vue@3.4.3:
     resolution: {integrity: sha512-kqf7SGFoG+80aZG6Pf+gsZIVvGSCKE98JbiWqcCV9cThtg91Jav0yvYFC9Zb+jKetNGF6ZKeoaxgZfND21fWKw==}
@@ -828,6 +839,10 @@ packages:
       minipass: 7.0.4
       path-scurry: 1.10.1
     dev: true
+
+  /gsap/3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+    dev: false
 
   /hasown/2.0.0:
     resolution: {integrity: sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==}
