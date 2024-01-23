@@ -9,7 +9,6 @@ onMounted(() => {
             gsap.set('.flash', { opacity: 0 }); // 在每次重複前將不透明度重置為 1
         }
     });
-
     // 添加一個 yoyo 動畫
     flashTimeline.to('.flash', {
         opacity: 0.3,
@@ -17,14 +16,12 @@ onMounted(() => {
         repeat: 8, // 來回共8次，一次4次
         yoyo: true,
     });
-
     // 添加一個暫停
     flashTimeline.to('.flash', {
         opacity: 0,
         duration: 3, // 3 秒的暫停
         immediateRender: false // 防止在時間線開始時立即渲染這一部分
     });
-
     gsap.to('.ball', {
         x: '60vw',
         duration: 2,
